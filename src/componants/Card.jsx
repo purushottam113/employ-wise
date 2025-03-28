@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router';
 
 const Card = ({user}) => {
     const {avatar, email, first_name, last_name} = user;
-
-    // const [isHover, setIsHover] = useState(false);
+    const navigate = useNavigate();
 
   return (
     <div className='flex p-4 items-center group'>
@@ -13,7 +13,7 @@ const Card = ({user}) => {
             <p>{email}</p>
         </div>
         <div className="hidden group-hover:flex flex-col gap-2 mx-6">
-            <button className=''>Edit</button>
+            <button onClick={()=>navigate("/edit")} className=''>Edit</button>
             <button className=''>Delete</button>
         </div>
     </div>
