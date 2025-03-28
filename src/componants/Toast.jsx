@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 const Toast = ({message, fakeMessage}) => {
     const [hide, setHide] = useState(false);
-    console.log(message)
 
     useEffect(()=>{
         setHide(false);

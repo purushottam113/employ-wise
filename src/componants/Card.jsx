@@ -24,7 +24,7 @@ const Card = ({user}) => {
       try {
         setIsDelete(true)
         setToastMessage("Deleted")
-        await axios.delete(`${BASE_URL}/api/users/${_id}`);
+        await axios.delete(`${BASE_URL}/api/users/${id}`);
         dispatch(removeFeed(id));
       } 
       catch (error) {

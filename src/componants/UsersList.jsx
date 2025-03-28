@@ -4,15 +4,25 @@ import Card from './Card';
 import { BASE_URL } from '../utils/constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFeed } from '../utils/feedSlice';
+import { useNavigate } from 'react-router';
 
 const UsersList = () => {
   
-    const feed = useSelector((store)=> store.feed);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPage, setTotalPage] = useState(1);
-    const [page, setPage] = useState(1);
-    const dispatch = useDispatch();
-    
+  const feed = useSelector((store)=> store.feed);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
+  const [token, setToken] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
+  useEffect(()=>{
+    const authToken = sessionStorage.getItem("authToken");
+    if(!authToken) {
+      console.log("hii")
+      navigate("/login");}
+  },[])
+
     const fetchUsers = async () =>{
       const res = await axios.get(`${BASE_URL}/api/users?page=${page}`);
       dispatch(addFeed(res?.data?.data));
