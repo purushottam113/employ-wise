@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { addUser } from '../utils/userSlice';
+import { useSelector } from 'react-redux'
 import axios from 'axios';
 import { BASE_URL } from '../utils/constant';
 import Toast from './Toast';
@@ -9,16 +8,14 @@ import { useNavigate } from 'react-router';
 
 const EditForm = () => {
   const user = useSelector((store)=> store.user) || {};
-  const [token, setToken] = useState("");
   const navigate = useNavigate();
-  
   
   useEffect(()=>{
     const authToken = sessionStorage.getItem("authToken");
     if(!authToken) {
       navigate("/login")
     };
-  },[token, navigate]);
+  },[navigate]);
   
   const {id, email, first_name, last_name} = user;
   

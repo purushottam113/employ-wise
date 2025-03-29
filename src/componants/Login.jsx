@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { BASE_URL, defaultEmail, defaultPassword } from '../utils/constant'
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -9,7 +9,6 @@ import Toast from './Toast';
 const Login = () => {
     const [emailId, setEmailId] = useState(defaultEmail);
     const [password, setPassword] = useState(defaultPassword);
-    const [token, setToken] = useState("");
     const [errors, setErros] = useState({});
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -34,7 +33,6 @@ const Login = () => {
             }
           );
           sessionStorage.setItem("authToken", res?.data?.token);
-          setToken(res?.data?.token);
           dispatch(isLogin(true));
           const timer = setTimeout(()=>{
             navigate("/");

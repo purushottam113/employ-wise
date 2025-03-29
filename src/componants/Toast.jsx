@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 const Toast = ({message, fakeMessage}) => {
-    const [hide, setHide] = useState(false);
 
     useEffect(()=>{
-        setHide(false);
         const timer = setTimeout(()=>{
-            fakeMessage();
-        },2000)
+                       fakeMessage();
+                      },2000)
         return ()=> clearTimeout(timer)
     },[fakeMessage])
 
