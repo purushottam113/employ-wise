@@ -59,7 +59,7 @@ const UsersList = () => {
     }
 
   return (
-    <div className='h-4/5 sm:min-h-screen flex flex-col justify-between'>
+    <div className='mt-12 h-4/5 sm:min-h-screen flex flex-col justify-between'>
       <div className='max-w-lg md:min-w-lg sm:mx-auto mt-2 p-6'>
       <p className='my-3 text-center font-semibold border-b-1 pt-2'>Users List</p>
         {
@@ -71,7 +71,7 @@ const UsersList = () => {
       </div>
 
       {/* Pagination */}
-     <div className='absolute bottom-1 w-full sm:w-auto sm:sticky  sm:bottom-4 md:min-w-lg mx-auto m-3 my-4 px-4 py-3 flex justify-evenly gap-4 rounded-lg shadow-md md:bg-amber-50'>
+     <div className='absolute bottom-1 w-full sm:w-auto sm:sticky sm:bottom-4 md:min-w-lg mx-auto m-3 my-4 px-4 py-3 flex justify-evenly gap-4 rounded-lg shadow-md md:bg-amber-50'>
        <button disabled={currentPage===1} onClick={()=>prevPage(currentPage)}
          className={`px-4 py-2 rounded-md transition ${
            currentPage === 1 

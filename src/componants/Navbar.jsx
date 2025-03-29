@@ -24,7 +24,7 @@ const Navbar = () => {
   },[])
 
   return (
-    <div className='flex justify-between p-4 bg-gradient-to-r from-blue-500 to-purple-700 shadow-md'>
+    <div className='fixed top-0 w-full flex justify-between p-4 bg-gradient-to-r from-blue-500 to-purple-700 shadow-md'>
       <p onClick={()=>navigate("/")} className='text-white text-xl font-bold cursor-pointer hover:text-gray-200 transition'>EMPLOY WISE</p>
       {isLogined?
       <button onClick={handleLogout} className='px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition'>Logout</button>:

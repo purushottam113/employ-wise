@@ -45,7 +45,7 @@ const Login = () => {
     }
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-lg space-y-4 ">
+    <div className="max-w-lg mx-auto mt-24 p-6 bg-white shadow-md rounded-lg space-y-4 ">
       <p className="text-2xl font-bold text-center mb-4">Login</p>
         <div className="">
             <label className="block text-gray-700 font-medium">Email</label>
