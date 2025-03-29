@@ -1,70 +1,79 @@
-EmployWise React App
+# EmployWise - React App
 
-Project Overview
-EmployWise is a React-based user management application that integrates with the Reqres API to perform authentication, editing, and deletion functionalities.
+## 📌 Project Overview
+EmployWise is a React-based user management application that integrates with the Reqres API to handle authentication, user editing, and deletion functionalities.
 
-This project was built using React (Vite), Tailwind CSS, React Router, Redux-toolkit and Axios for API communication.
+This project is built using:
+- React (Vite)
+- Tailwind CSS
+- React Router
+- Redux Toolkit
+- Axios for API communication
 
-Features
-✅ Level 1: Authentication
-Users can log in with credentials (email: eve.holt@reqres.in, password: cityslicka).
+---
+## 🚀 Features
 
-Token is stored in localStorage upon successful login.
+### ✅ Level 1: Authentication
+- Users can log in with credentials:  
+  **Email**: `eve.holt@reqres.in`  
+  **Password**: `cityslicka`
+- Token is stored in `sessionStorage` upon successful login.
+- Users are redirected to the **Users List** page.
 
-Users are redirected to the Users List page.
+### ✅ Level 2: User List
+- Fetch and display paginated users from [Reqres API](https://reqres.in/api/users?page=1).
+- Displays user's **first name, last name, and avatar** in a responsive layout.
+- Implements **pagination** for navigating between pages.
 
-✅ Level 2: User List
-Fetch and display paginated users from https://reqres.in/api/users?page=1.
+### ✅ Level 3: Edit & Delete Users
+- Users can edit their details (**first name, last name, email**).
+- Updates are handled via `PUT /api/users/{id}`.
+- Users can delete their profiles using `DELETE /api/users/{id}`.
 
-Users' first name, last name, and avatar are displayed in a responsive layout.
+### ✅ Additional Enhancements
+- **React Router** for smooth navigation.
+- **Error handling** for API failures.
+- **Responsive UI** with Tailwind CSS.
 
-Pagination is implemented for navigating through different pages.
+---
+## 🛠️ Tech Stack
 
-✅ Level 3: Edit & Delete Users
-Users can edit their details (first name, last name, email).
+| Technology       | Usage |
+|-----------------|--------|
+| **Frontend**    | React (Vite) |
+| **UI Framework** | Tailwind CSS |
+| **State Management** | Redux Toolkit |
+| **Routing** | React Router |
+| **API Calls** | Axios |
+| **Deployment** | Netify |
 
-Updates are handled via PUT /api/users/{id}.
+---
+## 🔧 Installation & Setup
 
-Users can delete their profiles using DELETE /api/users/{id}.
+1️⃣ **Install Dependencies**  
+```sh
+npm install
+```
 
-✅ Additional Enhancements
-React Router for smooth navigation.
+2️⃣ **Start the Development Server**  
+```sh
+npm run dev
+```
+The app will run on **http://localhost:5173/** (or as specified in the terminal).
 
-Error handling for API failures.
+---
+## 📡 API Endpoints Used
 
-Responsive UI using Tailwind CSS.
+| Action | Method | Endpoint |
+|--------|--------|-----------|
+| **Login** | `POST` | `/api/login` |
+| **Fetch Users** | `GET` | `/api/users?page=1` |
+| **Update User** | `PUT` | `/api/users/{id}` |
+| **Delete User** | `DELETE` | `/api/users/{id}` |
 
-Tech Stack
-Frontend: React (Vite)
+---
+## 👤 Author
+**Purushottam Tulse**
+- 📧 Contact: purushottamtulse@gmail.com
+- 🔗 GitHub: [Purushottam Tulse](https://github.com/purushottam113)
 
-UI Framework: Tailwind CSS
-
-State Management: Redux-toolkit
-
-Routing: React Router
-
-API Calls: Axios
-
-Deployment: [Your Deployment Platform]
-
-Installation & Setup
-1️⃣ Install Dependencies  
-    npm install
-
-2️⃣ Start the Development Server
-    npm run dev
-    The app will run on http://localhost:5173/ (or as shown in the terminal).
-
-Endpoints Used
-Login: POST /api/login
-
-Fetch Users: GET /api/users?page=1
-
-Update User: PUT /api/users/{id}
-
-Delete User: DELETE /api/users/{id}
-
-Author
-👤 Purushottam Tulse
-📧 Contact: purushottam Tulse
-🔗 GitHub: https://github.com/purushottam113
