@@ -1,12 +1,70 @@
-# React + Vite
+EmployWise React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Overview
+EmployWise is a React-based user management application that integrates with the Reqres API to perform authentication, editing, and deletion functionalities.
 
-Currently, two official plugins are available:
+This project was built using React (Vite), Tailwind CSS, React Router, Redux-toolkit and Axios for API communication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+✅ Level 1: Authentication
+Users can log in with credentials (email: eve.holt@reqres.in, password: cityslicka).
 
-## Expanding the ESLint configuration
+Token is stored in localStorage upon successful login.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Users are redirected to the Users List page.
+
+✅ Level 2: User List
+Fetch and display paginated users from https://reqres.in/api/users?page=1.
+
+Users' first name, last name, and avatar are displayed in a responsive layout.
+
+Pagination is implemented for navigating through different pages.
+
+✅ Level 3: Edit & Delete Users
+Users can edit their details (first name, last name, email).
+
+Updates are handled via PUT /api/users/{id}.
+
+Users can delete their profiles using DELETE /api/users/{id}.
+
+✅ Additional Enhancements
+React Router for smooth navigation.
+
+Error handling for API failures.
+
+Responsive UI using Tailwind CSS.
+
+Tech Stack
+Frontend: React (Vite)
+
+UI Framework: Tailwind CSS
+
+State Management: Redux-toolkit
+
+Routing: React Router
+
+API Calls: Axios
+
+Deployment: [Your Deployment Platform]
+
+Installation & Setup
+1️⃣ Install Dependencies  
+    npm install
+
+2️⃣ Start the Development Server
+    npm run dev
+    The app will run on http://localhost:5173/ (or as shown in the terminal).
+
+Endpoints Used
+Login: POST /api/login
+
+Fetch Users: GET /api/users?page=1
+
+Update User: PUT /api/users/{id}
+
+Delete User: DELETE /api/users/{id}
+
+Author
+👤 Purushottam Tulse
+📧 Contact: purushottam Tulse
+🔗 GitHub: https://github.com/purushottam113

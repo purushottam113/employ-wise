@@ -69,7 +69,7 @@ const UsersList = () => {
                                  onCardClick={() => handleCardClick(user.id)}/>)
         }
       </div>
-
+        
       {/* Pagination */}
      <div className='absolute bottom-1 w-full sm:w-auto sm:sticky sm:bottom-4 md:min-w-lg mx-auto m-3 my-4 px-4 py-3 flex justify-evenly gap-4 rounded-lg shadow-md md:bg-amber-50'>
        <button disabled={currentPage===1} onClick={()=>prevPage(currentPage)}
