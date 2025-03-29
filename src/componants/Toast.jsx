@@ -16,7 +16,7 @@ const Toast = ({message, fakeMessage}) => {
     }
 
   return (
-    <div className='fixed bottom-5 right-5 bg-gray-900 text-white px-4 py-2 rounded shadow-lg animate-slide-in'>
+    <div className='fixed top-4 right-2 bg-gray-900 text-white px-4 py-2 rounded shadow-lg animate-slide-in'>
       <p>{message}</p>
     </div>
   )

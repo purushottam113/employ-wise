@@ -14,10 +14,8 @@ const EditForm = () => {
   
   
   useEffect(()=>{
-    setToken(sessionStorage.getItem("authToken"));
-    if(!token) {
-      console.log(token)
-      console.log("token Missing")
+    const authToken = sessionStorage.getItem("authToken");
+    if(!authToken) {
       navigate("/login")
     };
   },[token, navigate]);
@@ -55,7 +53,7 @@ const EditForm = () => {
         setToastMessage("Changes Saved")
       }
       catch (error) {
-        setToastMessage("Something going wrong");
+        setToastMessage("Something went wrong");
       }
     }
   }

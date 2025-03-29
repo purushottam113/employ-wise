@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { BASE_URL, defaultEmail, defaultPassword } from '../utils/constant'
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { isLogin } from '../utils/loginSlice';
+import Toast from './Toast';
 
 const Login = () => {
     const [emailId, setEmailId] = useState(defaultEmail);
@@ -9,6 +12,8 @@ const Login = () => {
     const [token, setToken] = useState("");
     const [errors, setErros] = useState({});
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const isLogined = useSelector((store)=> store.login);
     
     const validate = ()=> {
       let newErrors = {};
@@ -16,7 +21,6 @@ const Login = () => {
       if(!password.trim()) newErrors.password = "Password is required";
   
       setErros(newErrors);
-      console.log(errors)
       return Object.keys(newErrors).length === 0;
     }
 
@@ -31,10 +35,14 @@ const Login = () => {
           );
           sessionStorage.setItem("authToken", res?.data?.token);
           setToken(res?.data?.token);
-          navigate("/");
+          dispatch(isLogin(true));
+          const timer = setTimeout(()=>{
+            navigate("/");
+          },500);
+          return ()=> clearImmediate(timer);
         }
       } catch (error) {
-        console.log(error)
+        console.log("error")
       }
     }
 
@@ -52,6 +60,7 @@ const Login = () => {
             <label className="block text-red-600 font-light">{errors.password}</label>
         </div>
       <button onClick={handleLogin} className='block w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition'>Submit</button>
+      {isLogined && <Toast message={"Login Successful"} fakeMessage={()=> setToastMessage("")}/>}
     </div>
   )
 }
